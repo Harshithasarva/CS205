@@ -33,7 +33,7 @@ def manhattan_distance(curr_state):
    pos_in_goal = {1: [0, 0], 2: [0, 1], 3: [0, 2], 4: [1, 0], 5: [1, 1], 6: [1, 2], 7: [2, 0], 8: [2, 1], 0: [2, 2]} 
    
    #OR
-   #positons of tiles can be found using iteration as well - in case of a 15-puzzle
+   #positions of tiles can be found using iteration as well - in case of a 15-puzzle
    for r in range(0, len(goal_state)):
      for c in range(0, len(goal_state)):
        if goal_state[r][c] not in pos_in_goal:
