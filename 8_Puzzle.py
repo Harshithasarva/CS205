@@ -30,8 +30,7 @@ def manhattan_distance(curr_state):
    pos_in_curr = dict() #stores the positions of tiles in the current state argument 
 
    #positions of the tiles in the goal state - hardcoded as it is fixed 
-   pos_in_goal = {1: [0, 0], 2: [0, 1], 3: [0, 2], 4: [1, 0], \
-                  5: [1, 1], 6: [1, 2], 7: [2, 0], 8: [2, 1], 0: [2, 2]} 
+   pos_in_goal = {1: [0, 0], 2: [0, 1], 3: [0, 2], 4: [1, 0], 5: [1, 1], 6: [1, 2], 7: [2, 0], 8: [2, 1], 0: [2, 2]} 
    
    #OR
    #positons of tiles can be found using iteration as well - in case of a 15-puzzle
@@ -205,8 +204,7 @@ def general_search(state, alg_choice):
 
 def main():
   print("Welcome to the 8-puzzle solver \n")
-  input_choice = int(input("Enter 1 if you want to choose the default puzzle\
-   \nEnter 2 if you want to enter a new puzzle \n"))
+  input_choice = int(input("Enter 1 if you want to choose the default puzzle \n Enter 2 if you want to enter a new puzzle \n"))
   if input_choice == 1:
     input_puzzle = [[1,3,6], [ 5,0,7], [4,8,2]] #set the default puzzle
     
@@ -222,8 +220,7 @@ def main():
 
   print("Input puzzle is", input_puzzle)
   #Choosing the Algorithm:
-  input_alg = int(input("\nChoose an algorithm to solve the puzzle: \n 1. Uniform Search Cost \n\
-  2. A* Algorithm with misplaces tiles \n 3. A* Algorithm with manhattan distance \n"))
+  input_alg = int(input("\nChoose an algorithm to solve the puzzle: \n 1. Uniform Search Cost \n 2. A* Algorithm with misplaces tiles \n 3. A* Algorithm with manhattan distance \n"))
 
   #calling the general search algorithm to implement the puzzle
   general_search(input_puzzle, input_alg)
