@@ -144,7 +144,6 @@ def general_search(state, alg_choice):
   elif alg_choice == 3:
     heuristic = manhattan_distance(state)
     
-  #initial_node.heuristic_cost = heuristic
   initial_node.heuristic_cost = heuristic
   initial_node.fscore = heuristic
   
