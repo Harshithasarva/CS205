@@ -5,7 +5,7 @@ import time
 class Node:
   def __init__(self, node):
     self.state = node
-    self.children = [] #stores it's child nodes
+    self.children = [] #stores child nodes
     self.parent = None # To keep track of the parent nodes to print the solution path
     self.heuristic_cost = 0 #h(n) - heuristic value based on the selection
     self.depth = 0 #g(n) - this code uses depth as the cost to expand a node
@@ -61,7 +61,6 @@ def locateZero(state):
         zero_col = j
   return zero_row, zero_col
 
-
 #checks if the state is goal state and return True if it is
 def check_goal(state):
   goal_state = [[1,2,3],[4,5,6],[7,8,0]]
@@ -71,11 +70,11 @@ def check_goal(state):
         return False
   return True
 
-
 #generates the child nodes of curr_node by moving the blank/zero LEFT, RIGHT, UP, DOWN
 def expand_nodes(curr_node, visited):
   r, c = locateZero(curr_node.state)
   child_list = [] #stores the children of the curr_node 
+  
   #move left
   if c <= 2 and c != 0 :
     left_move = copy.deepcopy(curr_node.state)
@@ -103,6 +102,7 @@ def expand_nodes(curr_node, visited):
     down_move[r][c], down_move[r+1][c] = down_move[r+1][c], down_move[r][c]
     if down_move not in visited:
       child_list.append(Node(down_move))
+      
   curr_node.children = child_list #updating the children of curr_node 
   return curr_node
 
@@ -219,6 +219,7 @@ def main():
     print("Invalid Choice, Select 1 or 2 again \n")
 
   print("Input puzzle is", input_puzzle)
+  
   #Choosing the Algorithm:
   input_alg = int(input("\nChoose an algorithm to solve the puzzle: \n 1. Uniform Search Cost \n 2. A* Algorithm with misplaces tiles \n 3. A* Algorithm with manhattan distance \n"))
 
