@@ -214,7 +214,7 @@ def main():
     row2 = list(map(int, input("Enter row2 with spaces between numbers").split()))
     row3 = list(map(int, input("Enter row3 with spaces between numbers").split()))
     input_puzzle = [row1, row2, row3]
-    #print("Entered input puzzle is", input_puzzle)
+  
   else:
     print("Invalid Choice, Select 1 or 2 again \n")
 
@@ -223,7 +223,7 @@ def main():
   #Choosing the Algorithm:
   input_alg = int(input("\nChoose an algorithm to solve the puzzle: \n 1. Uniform Search Cost \n 2. A* Algorithm with misplaces tiles \n 3. A* Algorithm with manhattan distance \n"))
 
-  #calling the general search algorithm to implement the puzzle
+  #calls the general search algorithm to start the search
   general_search(input_puzzle, input_alg)
 
 if __name__ == "__main__":
